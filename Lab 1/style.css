@@ -1,0 +1,15 @@
+.html{
+    width: 100%;
+    height: 100%;
+}
+
+.basic_div{
+    display: flex;
+}
+.basic_div a{
+    text-decoration: none;
+}
+img{
+    width: 250px;
+    height: 350px;
+}
