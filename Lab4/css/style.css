@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white; /* Цвет ссылок в навигации */
+}
+
+.card {
+  transition: transform 0.2s;  /* Добавляем плавный эффект при наведении на карточку */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Увеличиваем размер карточки при наведении */
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Functions</title>
+</head>
+<body>
+    <h1>Откройте консоль нажав f12</h1>
+    <script>
+        "use strict";
+      
+        function Car(year, brand, price) {
+          this.year = year;
+          this.brand = brand;
+          this.price = price;
+      
+          this.getPrice = function() {
+            console.log("Стоимость машины " + this.brand + " " + this.year + " года выпуска: " + this.price + " у.е.");
+          };
+        }
+      
+        const myCar = new Car(2023, "Toyota", 25000);
+        myCar.getPrice();
+      
+      
+      
+        function NumberArray(numbers) {
+          this.numbers = numbers;
+      
+          this.getSum = function() {
+            let sum = 0;
+            for (let i = 0; i < this.numbers.length; i++) {
+              sum += this.numbers[i];
+            }
+            return sum;
+          };
+        }
+      
+        const myArray = new NumberArray([1, 2, 3, 4, 5]);
+        const sumOfArray = myArray.getSum();
+        console.log("Сумма элементов массива:", sumOfArray); 
+      
+      </script>
+</body>
+</html>
