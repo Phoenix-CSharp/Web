@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tupple's</title>
+    <style>
+        .colored-block {
+            width: 100px;
+            height: 100px;
+            margin: 10px; /* Добавляем отступы между блоками */
+            display: inline-block; /* Чтобы блоки отображались в строку */
+        }
+        .green{
+            background-color: green;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .other{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Откройте консоль нажав f12</h1>
+    <div id="elementId">Исходный текст (ID)</div>
+    <div class="elementClass">Исходный текст (Class 1)</div>
+    <div class="elementClass">Исходный текст (Class 2)</div>
+    <hr>
+
+    <a href="#">Ссылка 1</a>
+    <a href="#">Ссылка 2</a>
+    <a href="#">Ссылка 3</a>
+    <hr>
+
+    <div class="colored-block1">Блок 1</div>
+    <div class="colored-block2">Блок 2</div>
+    <div class="colored-block3">Блок 3</div>
+    <script>
+        "use strict";
+        console.log("Заданние 1");
+        const products = [
+            {
+            id: 3,
+            price: 200,
+            },
+            {
+            id: 4,
+            price: 900,
+            }
+        ];
+
+        products.forEach(product => {
+            product.price = product.price * 0.85;
+        });
+
+        console.log("Измененные продукты:");
+        console.log(products);
+
+        console.log("Задание 2");
+        "use strict";
+
+        let products1 = [
+            {
+            id: 3,
+            price: 127,
+            photos: [
+                "1.jpg",
+                "2.jpg",
+            ],
+            },
+            {
+            id: 5,
+            price: 499,
+            photos: [],
+            },
+            {
+            id: 10,
+            price: 26,
+            photos: [
+                "3.jpg",
+            ],
+            },
+            {
+            id: 8,
+            price: 78,
+            },
+        ];
+
+  
+        const productsWithPhotos = products1.filter(product => {
+    
+            return product.photos && Array.isArray(product.photos) && product.photos.length > 0;
+        });
+
+        console.log("Продукты с фотографиями:");
+        console.log(productsWithPhotos);
+
+        console.log("Задание 3");
+        "use strict";
+
+        function Person(height, weight, age) {
+            this.height = height;
+            this.weight = weight;
+            this.age = age;
+
+            this.birthYear = new Date().getFullYear() - this.age;
+        }
+
+        Person.prototype.walk = function() {
+            console.log("Человек идет");
+        };
+
+        Person.prototype.sit = function() {
+            console.log("Человек сидит");
+        };
+
+        const person1 = new Person(180, 75, 30);
+        const person2 = new Person(165, 60, 25);
+
+
+        person1.walk(); 
+        person1.sit();  
+        console.log("Год рождения person1:", person1.birthYear); 
+  
+        person2.walk(); 
+        person2.sit();  
+        console.log("Год рождения person2:", person2.birthYear);
+
+        console.log("Задание 4");
+        const elementById = document.getElementById("elementId");
+        if (elementById) {
+            elementById.textContent = "Учим Js (ID)";
+        } else {
+            console.log("Элемент с ID 'elementId' не найден.");
+        }
+
+    // Получаем элементы по классу
+        const elementsByClass = document.getElementsByClassName("elementClass");
+        for (let i = 0; i < elementsByClass.length; i++) {
+            elementsByClass[i].textContent = "Учим Js (Class)";
+        }
+
+    // Задание 2: Добавление атрибута target к ссылкам
+
+        const links = document.getElementsByTagName("a");
+        for (let i = 0; i < links.length; i++) {
+            links[i].setAttribute("target", "_blank");
+        }
+
+    // Задание 3: Установка фонового цвета для div элементов
+
+        const coloredBlocks = document.querySelectorAll('.colored-block');
+        const colors = ["red", "green", "blue"];
+
+        coloredBlocks.forEach((block, index) => {
+            if (index < colors.length) {
+                block.style.backgroundColor = colors[index];
+            } else {
+                block.style.backgroundColor = "yellow";
+            }
+        });
+    </script>
+</body>
+</html>
