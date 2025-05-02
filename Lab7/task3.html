@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Task 3</title>
+</head>
+<body>
+  <div class="myDiv">Div 1 Content</div>
+  <div class="myDiv">Div 2 Content</div>
+  <div class="myDiv">Div 3 Content</div>
+
+  <script>
+    const divs = document.getElementsByClassName("myDiv");
+    for (let i = 0; i < divs.length; i++) {
+      divs[i].textContent = "Div " + (i + 1) + " content and more.";
+      if (i === 0) {
+        divs[i].style.backgroundColor = "red";
+      } else if (i === 1) {
+        divs[i].style.backgroundColor = "green";
+      } else {
+        divs[i].style.backgroundColor = "blue";
+      }
+    }
+  </script>
+</body>
+</html>

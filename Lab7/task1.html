@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Task 1</title>
+</head>
+<body>
+  <div id="myId">Original text for ID</div>
+  <div class="myClass">Text for class 1</div>
+  <div class="myClass">Text for class 2</div>
+
+  <script>
+    const elementById = document.getElementById("myId");
+    elementById.textContent = "учим Js";
+
+    const elementsByClass = document.getElementsByClassName("myClass");
+    for (let i = 0; i < elementsByClass.length; i++) {
+      elementsByClass[i].textContent = "учим Js";
+    }
+  </script>
+</body>
+</html>
