@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Задание 2</title>
+  <link href="/bootstrap-5.3.3-dist/css/bootstrap.css" rel="stylesheet">
+  <style>
+    #counter {
+      font-size: 24px;
+      margin: 20px;
+    }
+    #incBtn {
+      background-color: #4CAF50;
+      color: white;
+      border-width: 1px;
+      border-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <div id="counter">0</div>
+  <button class="btn btn-danger"id="incBtn">Увеличить</button>
+  <button class="btn btn-danger" id="decBtn">Уменьшить</button>
+
+  <script>
+    let count = 0;
+
+    document.getElementById('incBtn').addEventListener('click', function () {
+      count++;
+      document.getElementById('counter').innerText = count;
+    });
+
+    document.getElementById('decBtn').addEventListener('click', function () {
+      count--;
+      document.getElementById('counter').innerText = count;
+    });
+  </script>
+</body>
+</html>

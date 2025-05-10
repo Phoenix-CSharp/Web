@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Форма обратной связи</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap @5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+    .form-header {
+      background-color: #FFD700;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .btn-submit {
+      background-color: #FFD700;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h3 class="form-header">Форма обратной связи</h3>
+    <form id="feedbackForm">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="user-name" class="form-label">Ваше имя:</label>
+          <input type="text" class="form-control" id="user-name" placeholder="Иван">
+        </div>
+        <div class="col-md-8">
+          <label for="user-female" class="form-label">Ваша фамилия:</label>
+          <input type="text" class="form-control" id="user-female" placeholder="Иванов">
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-mb-8">
+            <label for="user-email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="user-email" placeholder="ivan@mail.ru">
+        </div>
+    </div>
+      <div class="mb-3">
+        <label for="user-phone" class="form-label">Телефон:</label>
+        <input type="tel" class="form-control" id="user-phone" placeholder="+7 (XXX) XXX-XX-XX">
+      </div>
+      <div class="mb-3">
+        <label for="user-message" class="form-label">Сообщение:</label>
+        <textarea class="form-control" id="user-message" rows="3" placeholder="Введите сообщение"></textarea>
+      </div>
+      <div class="mb-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="user-checkbox">
+          <label class="form-check-label" for="user-checkbox">
+            Подтверждаю обработку персональных данных
+          </label>
+        </div>
+    </div>
+      <button type="button" class="btn btn-submit" id="submitBtn">Отправить сообщение</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      const name = document.getElementById('user-name').value.toUpperCase();
+      const female = document.getElementById('user-female').value.toUpperCase();
+      const email = document.getElementById('user-email').value.toLowerCase();
+      const phone = parseInt(document.getElementById('user-phone').value.replace(/\D/g, ''), 10);
+      const checkboxValue = document.getElementById('user-checkbox').checked;
+
+      const obj = {
+        name,
+        female,
+        email,
+        phone,
+        checkboxvalue: checkboxValue
+      };
+
+      console.log(obj);
+    });
+  </script>
+</body>
+</html>
